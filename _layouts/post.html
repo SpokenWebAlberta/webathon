@@ -37,7 +37,7 @@
   </header>
 
 {%- if page.icon -%}
-  <div class="feature"><img src={{ page.icon | absolute_url }}/></div>
+  <div class="feature"><img src="{{ page.icon | absolute_url }}"/></div>
       {%- if forloop.last == false %}, {% endif -%}
 {%- endif -%}
 
