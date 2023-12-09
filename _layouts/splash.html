@@ -30,7 +30,7 @@
                       </a>
                     <span class="post-meta">Posted {{ post.date | date: date_format }} by <b>{{ post.author }} </b></span>
                     <a class="post-link" href="{{ post.url | absolute_url }}">
-                    <span class="post-icon"><img src={{ post.icon | prepend: site.baseurl | prepend: site.url }}/></span>
+                    <span class="post-icon"><img src={{ post.icon | absolute_url }}/></span>
                     </a>
 <!--                   {%- if site.show_excerpts -%}
                       {{ post.excerpt }} ... <a href="{{ post.url | absolute_url }}">Continue Reading</a>
