@@ -1,0 +1,14 @@
+- name: About
+  link: /about/
+- name: Team
+  link: /team/
+- name: Blog
+  link: /blogfeed/
+- name: SGW Reading Series
+  link: /svg/
+- name: Research
+  link: /research/
+- name: Oral Literary History
+  link: /oral-literary-history/
+- name: Poetry Readings in Canada
+  link: /poetry-readings-in-canada/

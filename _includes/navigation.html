@@ -1,0 +1,74 @@
+<!---working code, no sublinks-->
+
+<nav class="site-nav">
+    {% for item in site.data.navigation %}
+      <a class="page-link" href="{{ item.link | absolute_url}}" {% if page.url == item.link %}style="background-color: black; color: white !important"{% endif %}>
+        {{ item.name }}
+      </a>
+    {% endfor %}
+</nav>
+
+
+<!---alt nav, sublinks 
+
+<nav class="site-nav">
+    <ul>
+      {% for item in site.data.navigation %}
+        {% if item.subcategories != null %}
+          <li>
+            <a class="page-link" href="{{ item.link | absolute_url}}">
+            {{ item.name }} ▼</a>
+            <ul>
+            {% for subcategory in item.subcategories %}
+              <li><a class="page-link" href="{{ subcategory.sublink | absolute_url}}">{{ subcategory.subname }}</a></li>
+            {% endfor %}
+            </ul>
+          </li>
+        {% elsif item.name == page.name %}
+           <li class="active">
+            href="{{ item.link | absolute_url}}">{{ item.name }}</a>
+           </li>
+        {% else %} 
+          <li>
+            <a class="page-link" href="{{ item.link | absolute_url}}">
+                {{ item.name }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+
+-->
+
+
+
+<!---alt nav, inputting links directly
+
+<nav class="site-nav">
+    <a class="page-link" href="/about.html" {% if page.url == "/about.html" %}style="color: red;"{% endif %}>
+      About
+    </a>
+    <a class="page-link" href="/" {% if page.url == "/" %}style="color: red;"{% endif %}>
+        Blog
+      </a>
+      <a class="page-link" href="/about.html" {% if page.url == "/about.html" %}style="color: red;"{% endif %}>
+        SGW Reading Series
+      </a>
+      <a class="page-link" href="/about.html" {% if page.url == "/about.html" %}style="color: red;"{% endif %}>
+        Events
+      </a>
+      <a class="page-link" href="/about.html" {% if page.url == "/about.html" %}style="color: red;"{% endif %}>
+        Resources
+      </a>
+      <a class="page-link" href="/about.html" {% if page.url == "/about.html" %}style="color: red;"{% endif %}>
+        Research
+      </a>
+      <a class="page-link" href="/about.html" {% if page.url == "/about.html" %}style="color: red;"{% endif %}>
+        Oral Literary History
+      </a>
+      <a class="page-link" href="/about.html" {% if page.url == "/about.html" %}style="color: red;"{% endif %}>
+        Poetry Readings in Canada
+      </a>
+  </nav>
+
+  -->
