@@ -23,7 +23,7 @@ email: jason.camlot@concordia.ca
 description: >- # this means to ignore newlines until "baseurl:"
   SpokenWeb is a SSHRC-funded academic project at Concordia University in Montreal, Canada.
 baseurl: "/webathon" # the subpath of your site, e.g. /blog
-url: "https://cmiya.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://spokenwebalberta.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: SpokenWebCanada
 github_username:  SpokenWebAlberta
 facebook_username: SpokenWeb
