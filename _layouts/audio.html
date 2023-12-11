@@ -9,14 +9,17 @@
     {%- include header.html -%}
 
 <main class="page-content" aria-label="Content">
-    <div class="wrapper">
+    <div class="audio-wrapper">
 
+<div class="audio-reader">
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   {%- assign object_data = site.data.data.objects[page.objects_id] -%}
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ object_data.Item_Description.title | escape }}</h1>
+
+<!--
     <p class="post-meta">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -32,6 +35,7 @@
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
             <span class="p-author h-card" itemprop="name">{{ object_data.Creators[0].name }}</span></span>
       </p>
+-->
   </header>
 
 {%- if page.icon -%}
@@ -39,11 +43,41 @@
       {%- if forloop.last == false %}, {% endif -%}
 {%- endif -%}
 
-  <div class="post-content e-content" itemprop="articleBody">
+<audio src="{{ object_data.Digital_File_Description[0].file_url }}" controls></audio>
+
+
+  <div class="post-content e-content note" itemprop="articleBody">
+    <hr>
     <p>{{ object_data.Content.notes }}</p>
-    <audio src="{{ object_data.Digital_File_Description[0].file_url }}" controls></audio>
     {{ content }}
+    <hr>
   </div>
+
+<h3>Transcript</h3>
+{{ object_data.Content.contents | newline_to_br }}
+
+</div>
+
+<div class="rec-meta">
+
+<img src="{{ 'assets/img/' | append: object_data.Digital_File_Description[1].filename |  absolute_url }}" class="audio-icon">
+
+<table class="tape-meta" itemprop="articleBody">
+    <caption>Tape</caption>
+    <tr><td>Catalogue Number</td><td>{{ object_data.Item_Description.source_item_ID }}</td></tr>
+    <tr><td>Notes</td><td>{{ object_data.Content.notes }}</td></tr>
+    <tr><td>Duration</td><td>{{ object_data.Digital_File_Description[0].duration }}</td></tr>
+    <tr><td>Sound Quality</td><td>{{ object_data.Material_Description[0].sound_quality }}</td></tr>
+
+<table class="tape-meta" itemprop="articleBody">
+  <caption>Reading</caption>
+  <tr><td>Speakers</td><td>{{ object_data.Creators[0].name }}</td></tr>
+  <tr><td>Venue</td><td>{{ object_data.Location[0].venue }}</td></tr>
+  <tr><td>Date</td><td>{{ object_data.Dates[0].date }}</td></tr>
+</table>
+
+</div>
+
 
   {%- if site.disqus.shortname -%}
     {%- include disqus_comments.html -%}
