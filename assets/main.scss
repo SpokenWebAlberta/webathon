@@ -207,3 +207,35 @@ ul li :hover {font-weight: 600; color: grey}
 }
 
 .home {margin-right: 15em}
+
+
+/** AUDIO PAGE **/
+
+.audio-wrapper {display: flex }
+
+.audio-reader {width: 75%; .post {margin-right: 2em;} }
+
+.rec-meta {width: 30%}
+
+.p-name { font-size: 1em}
+
+.audio-icon {width: 15em}
+
+.e-content.note {
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.25em;
+
+  hr {border-top: 1px solid lightgrey; margin: 1em 0em}
+}
+
+.tape-meta {
+  font-size: 0.9em;
+  td:first-child {width: 30%}
+}
+
+caption {
+  font-weight: 500;
+  background-color: lightgrey;
+  padding: 0.5em;
+}
